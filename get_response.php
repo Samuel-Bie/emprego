@@ -8,7 +8,7 @@ if ((isset($_POST['name']) && $_POST['name'] != '') && (isset($_POST['email']) &
     $message = $conn->real_escape_string($_POST['message']);
 
 
-    $sql = "INSERT INTO contact_form_info (name, email, message) VALUES ('" . $yourName . "','" . $yourEmail . "', '" . $message . "')";
+    $sql = "INSERT INTO contacts (name, email, message) VALUES ('" . $yourName . "','" . $yourEmail . "', '" . $message . "')";
 
 
     if (!$result = $conn->query($sql)) {
