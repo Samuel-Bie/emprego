@@ -28,7 +28,7 @@
 
             <div class="col-md-8">
                 <h1>
-                    Easy Contact Form With Ajax MySQL
+                   Basic Contact Form
                 </h1>
                 <form name="contact-form" action="" method="post" id="contact-form">
                     <div class="form-group">
@@ -51,7 +51,7 @@
 
                     <img src="img/loading.gif" id="loading-img">
                 </form>
-                <div class="d"></div>
+                <div class="response_msg"></div>
             </div>
         </div>
     </div>
@@ -67,6 +67,7 @@
                 } else if ($("#contact-form [name='email']").val() === '') {
                     $("#contact-form [name='email']").css("border", "1px solid red");
                 } else {
+                    $("#loading-img").css("display", "block");
                     var sendData = $(this).serialize();
                     $.ajax({
                         type: "POST",
@@ -76,7 +77,7 @@
                             $("#loading-img").css("display", "none");
 
                             $(".response_msg").text(data);
-                            $(".response_msg").slideDown().fadeOut(3000);
+                            $(".response_msg").slideDown().fadeOut(5000);
                             $("#contact-form").find(
                                 "input[type=text], input[type=email], textarea").val("");
                         }
