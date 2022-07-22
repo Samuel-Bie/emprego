@@ -38,4 +38,5 @@ Just Run
 
     docker-compose up
 
-and access from http://localhost:80
+and access the page from http://localhost:8001
+and access phpMyAdmin from http://localhost:8002
