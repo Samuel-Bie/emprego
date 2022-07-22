@@ -28,7 +28,7 @@
 
             <div class="col-md-8">
                 <h1>
-                   Basic Contact Form
+                    Basic Contact Form
                 </h1>
                 <form name="contact-form" action="" method="post" id="contact-form">
                     <div class="form-group">
@@ -49,7 +49,9 @@
                     <button type="submit" class="btn btn-primary" name="submit" value="Submit"
                         id="submit_form">Send</button>
 
-                    <img src="img/loading.gif" id="loading-img">
+                    <a href="list.html" class="btn btn-success">list others</a>
+
+                        <img src="img/loading.gif" id="loading-img">
                 </form>
                 <div class="response_msg"></div>
             </div>
@@ -71,7 +73,7 @@
                     var sendData = $(this).serialize();
                     $.ajax({
                         type: "POST",
-                        url: "get_response.php",
+                        url: "save_response.php",
                         data: sendData,
                         success: function (data) {
                             $("#loading-img").css("display", "none");
