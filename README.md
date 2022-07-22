@@ -4,14 +4,17 @@ tech Test
 
 
 ## Directory Hierarchy
+
 ```
+|—— Dockerfile
 |—— database
 |    |—— boot.sql
 |—— database.php
-|—— get_reponse.php
+|—— docker-compose.yml
+|—— get_response.php
 |—— img
 |    |—— loading.gif
-|—— index.html
+|——
 ```
 
 
@@ -21,7 +24,8 @@ tech Test
 - database/boot.sql:  `basic database creation File`
 
 
-## Dependence
+
+## Dependencies For Windows or Linux
 - PHP
 - MYSQL
 
@@ -30,11 +34,8 @@ tech Test
 Just place it in your project root directory. Using Xammp or Lamp. I would prefer to dockerize
 
 ## Running from docker
-    Just Run ```docker-compose up``` and access from http://localhost:80
+Just Run
 
-## License
+    docker-compose up
 
-## Citing
-If you use xxx,please use the following BibTeX entry.
-```
-```
+and access from http://localhost:80
