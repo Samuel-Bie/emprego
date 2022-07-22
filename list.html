@@ -16,6 +16,9 @@
                 <h1>
                     List Of previous
                 </h1>
+
+                <div id="container-messages"></div>
+                <!-- create a a list of message items -->
                 <a href="index.html" class="btn btn-success">Submit New</a>
                 <img src="img/loading.gif" id="loading-img">
             </div>
@@ -29,6 +32,30 @@
                 type: "GET",
                 url: "get_responses.php",
                 success: function (data) {
+                    //create a list of message items
+
+
+                    //create a list of message items
+
+
+                    var messages = JSON.parse(data);
+                    var message_list = "";
+                    for (var i = 0; i < messages.length; i++) {
+                        message_list += '<div class="message-item">';
+                        message_list += '<div class="message-item-header">';
+                        message_list += '<div class="message-item-header-name">' + messages[i]
+                            .name + '</div>';
+                        message_list += '<div class="message-item-header-time">' + messages[i]
+                            .email + '</div>';
+                        message_list += '</div>';
+                        message_list += '<div class="message-item-body">';
+                        message_list += '<div class="message-item-body-message">' + messages[i]
+                            .message + '</div>';
+                        message_list += '</div>';
+                        message_list += '</div>';
+                        message_list += '<hr>';
+                    }
+                    $("#container-messages").html(message_list);
                     $("#loading-img").css("display", "none");
                 }
             });
